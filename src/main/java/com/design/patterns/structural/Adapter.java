@@ -11,12 +11,12 @@ package com.design.patterns.structural;
  */
 public class Adapter {
     
-    class Application {
+    public class Application {
         
         void main(){
             RoundHole hole = new RoundHole(5D);
             RoundPeg rpeg = new RoundPeg(5D);
-            System.out.println(hole.fits(rpeg));
+            System.out.println(hole.fits(rpeg)); // TRUE
             
             SquarePeg small = new SquarePeg(5D);
             SquarePeg large = new SquarePeg(10D);
@@ -24,13 +24,13 @@ public class Adapter {
 
             SquarePegAdapter smallAdapter = new SquarePegAdapter(small);
             SquarePegAdapter largerAdapter = new SquarePegAdapter(large);
-            System.out.println(hole.fits(smallAdapter));
-            System.out.println(hole.fits(largerAdapter));
+            System.out.println(hole.fits(smallAdapter)); // TRUE
+            System.out.println(hole.fits(largerAdapter)); // FALSE
             
         }
     }
 
-    class RoundHole {
+    public class RoundHole {
 
         double radius;
 
@@ -47,7 +47,7 @@ public class Adapter {
         }
     }
 
-    class RoundPeg {
+    public class RoundPeg {
 
         double radius;
 
@@ -63,7 +63,7 @@ public class Adapter {
         }
     }
 
-    class SquarePeg {
+    public class SquarePeg {
 
         double width;
 
@@ -76,7 +76,7 @@ public class Adapter {
         }
     }
 
-    class SquarePegAdapter extends RoundPeg {
+    public class SquarePegAdapter extends RoundPeg {
 
         private SquarePeg peg;
 
